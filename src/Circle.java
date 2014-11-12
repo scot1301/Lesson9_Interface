@@ -19,21 +19,26 @@ public class Circle implements Shape{
         radius = 1;
     }
     
-   
     public double area() {
         return Math.PI * radius * radius;
     }
-
-   
-    public void draw(Pen p) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    
+    public void draw(Pen p){
+        double side = 2.0 * Math.PI * radius/120.0;
+        p.up();
+        p.move(xPos + radius, yPos - side/2.0);
+        p.setDirection(90);
+        p.down();
+        
+        for (int i = 0; i < 120; i++){
+            p.move(side);
+            p.turn(3);
+        }
     }
-
-   
+    
     public double getXPos() {
         return xPos; 
     }
-
   
     public double getYPos() {
         return yPos;
