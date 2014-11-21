@@ -36,7 +36,7 @@ public class Circle extends AbstractShape{
         }
     }
     public String toString(){
-        String result = "This is a circle\n";
+        String result = "This is a Circle\n";
         result += "Radius: " + radius;
         result += "\n" + super.toString();
         return result;

@@ -40,8 +40,8 @@ public class Wheel extends Circle{
     public String toString(){
         String str = "This is a Wheel\n";
         str += "Radius: " + radius;
-        str += "Area: " + area();
-        str += "Perimeter: " + perimeter();
+        str += "\nArea: " + area();
+        str += "\nPerimeter: " + perimeter();
         str += "\nSpokes: " + spokes;
         str += "\nX-Y Position: " + xPos + "," + yPos;
         return str;

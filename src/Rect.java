@@ -13,11 +13,10 @@ public class Rect extends AbstractShape{
     }
     
     public Rect(double x, double y, double w, double h){
-        super();
+        super(x,y);
         width = w; 
         height = h;
     }
-    
     
     public double area() {
         return width * height;
@@ -26,7 +25,6 @@ public class Rect extends AbstractShape{
         return width*2 + height*2;
     }
 
-    
     public void draw(Pen p) {
         p.up();
         p.move(xPos, yPos);
@@ -46,8 +44,8 @@ public class Rect extends AbstractShape{
         width *= factor;
     }
     public String toString(){
-        String str = "This is a rectangle";
-        str += "Width: " + width + "\nHeight: " + height + "\n";
+        String str = "This is a Rectangle";
+        str += "\nWidth: " + width + "\nHeight: " + height;
         str += "\n" + super.toString();
         return str;
     }
