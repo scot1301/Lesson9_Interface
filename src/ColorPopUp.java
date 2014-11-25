@@ -129,10 +129,7 @@ public class ColorPopUp extends javax.swing.JDialog{
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnblueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnblueActionPerformed
-        erase();
-        p.setColor(Color.red);
-        s.draw(p);
-        txtinfo.setText(s.toString());
+        
     }//GEN-LAST:event_btnblueActionPerformed
 
     private void btnokActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnokActionPerformed

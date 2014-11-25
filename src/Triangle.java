@@ -11,6 +11,15 @@ public class Triangle extends AbstractShape {
         x3 = 100;
         y3 = 0;
     }
+       public void move(int x, int y){
+        double xc = x-xPos;
+        double yc = y-yPos;
+        x2 += xc;
+        y2 += yc;
+        x3 += xc;
+        y3 += yc;
+        
+    }
     
     public double area() {
         return Math.abs((xPos*y2-x2*yPos) + (x2*y3-x3*y2) + (x3*yPos-xPos*y3));
@@ -30,7 +39,10 @@ public class Triangle extends AbstractShape {
     }
 
     public void stretchBy(double fact) {
-        
+        x2 = xPos + (x2-xPos)*fact;
+        y2 = yPos + (y2-yPos)*fact;
+        x3 = xPos + (x3-xPos)*fact;
+        y3 = yPos + (y3-yPos)*fact;
     }
     
     public String toString(){

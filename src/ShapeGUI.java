@@ -34,9 +34,14 @@ Shape s;
         btnmove = new javax.swing.JButton();
         btnresize = new javax.swing.JButton();
         btnquit = new javax.swing.JButton();
-        btncol = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtinfo = new javax.swing.JTextArea();
+        jPanel3 = new javax.swing.JPanel();
+        btnblue = new javax.swing.JButton();
+        btnred = new javax.swing.JButton();
+        btngreen = new javax.swing.JButton();
+        btnmagenta = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 255, 204));
@@ -85,24 +90,25 @@ Shape s;
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btncircle, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(27, 27, 27)
                 .addComponent(btnrect)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btntriag)
-                .addGap(18, 18, 18)
+                .addGap(29, 29, 29)
                 .addComponent(btnwheel)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btncircle, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(btnwheel, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btncircle, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(btnrect, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btntriag, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addComponent(btnrect, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnwheel, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
@@ -121,20 +127,17 @@ Shape s;
 
         btnresize.setFont(new java.awt.Font("Gabriola", 0, 18)); // NOI18N
         btnresize.setText("Resize");
+        btnresize.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnresizeActionPerformed(evt);
+            }
+        });
 
         btnquit.setFont(new java.awt.Font("Gabriola", 0, 18)); // NOI18N
         btnquit.setText("Quit");
         btnquit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnquitActionPerformed(evt);
-            }
-        });
-
-        btncol.setFont(new java.awt.Font("Gabriola", 0, 18)); // NOI18N
-        btncol.setText("Color");
-        btncol.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btncolActionPerformed(evt);
             }
         });
 
@@ -147,8 +150,7 @@ Shape s;
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnresize, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnquit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnmove, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btncol, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnmove, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(15, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -158,8 +160,6 @@ Shape s;
                 .addComponent(btnmove, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
                 .addComponent(btnresize, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btncol, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnquit, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -169,6 +169,66 @@ Shape s;
         txtinfo.setColumns(20);
         txtinfo.setRows(5);
         jScrollPane1.setViewportView(txtinfo);
+
+        jPanel3.setBackground(new java.awt.Color(255, 153, 153));
+
+        btnblue.setText("Blue");
+        btnblue.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnblueActionPerformed(evt);
+            }
+        });
+
+        btnred.setText("Red");
+        btnred.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnredActionPerformed(evt);
+            }
+        });
+
+        btngreen.setText("Green");
+        btngreen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btngreenActionPerformed(evt);
+            }
+        });
+
+        btnmagenta.setText("Magenta");
+        btnmagenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnmagentaActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnblue)
+                .addGap(15, 15, 15)
+                .addComponent(btnred)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btngreen, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnmagenta)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnblue)
+                    .addComponent(btnred)
+                    .addComponent(btngreen)
+                    .addComponent(btnmagenta))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jLabel3.setFont(new java.awt.Font("Gabriola", 0, 24)); // NOI18N
+        jLabel3.setText("Color");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -188,7 +248,12 @@ Shape s;
                                 .addGap(12, 12, 12)
                                 .addComponent(jLabel2)))
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -199,13 +264,18 @@ Shape s;
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
         pack();
@@ -255,12 +325,42 @@ Shape s;
         txtinfo.setText(s.toString());
     }//GEN-LAST:event_btntriagActionPerformed
 
-    private void btncolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncolActionPerformed
-        ColorPopUp col = new ColorPopUp(this,true);
-        col.setModal(true);
-        col.setLocationRelativeTo(this);
-        col.setVisible(true);
-    }//GEN-LAST:event_btncolActionPerformed
+    private void btnresizeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnresizeActionPerformed
+        double factor = Double.parseDouble(JOptionPane.showInputDialog(this, "Enter stretch factor", "0"));
+        erase();
+        s.stretchBy(factor);
+        s.draw(p);
+        txtinfo.setText(s.toString());
+        
+    }//GEN-LAST:event_btnresizeActionPerformed
+
+    private void btnblueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnblueActionPerformed
+        erase();
+        p.setColor(Color.blue);
+        s.draw(p);
+        txtinfo.setText(s.toString());
+    }//GEN-LAST:event_btnblueActionPerformed
+
+    private void btnredActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnredActionPerformed
+        erase();
+        p.setColor(Color.red);
+        s.draw(p);
+        txtinfo.setText(s.toString());
+    }//GEN-LAST:event_btnredActionPerformed
+
+    private void btngreenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btngreenActionPerformed
+        erase();
+        p.setColor(Color.green);
+        s.draw(p);
+        txtinfo.setText(s.toString());
+    }//GEN-LAST:event_btngreenActionPerformed
+
+    private void btnmagentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmagentaActionPerformed
+        erase();
+        p.setColor(Color.magenta);
+        s.draw(p);
+        txtinfo.setText(s.toString());
+    }//GEN-LAST:event_btnmagentaActionPerformed
 
     
     public static void main(String args[]) {
@@ -294,18 +394,23 @@ Shape s;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnblue;
     private javax.swing.JButton btncircle;
-    private javax.swing.JButton btncol;
+    private javax.swing.JButton btngreen;
+    private javax.swing.JButton btnmagenta;
     private javax.swing.JButton btnmove;
     private javax.swing.JButton btnquit;
     private javax.swing.JButton btnrect;
+    private javax.swing.JButton btnred;
     private javax.swing.JButton btnresize;
     private javax.swing.JButton btntriag;
     private javax.swing.JButton btnwheel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea txtinfo;
     // End of variables declaration//GEN-END:variables
