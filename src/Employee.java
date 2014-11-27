@@ -17,20 +17,20 @@ public abstract class Employee {
 	}
 
 	
-	public String getNameRules() {
+	public static String getNameRules() {
 	 	return "nonblank";
 	}
 
-	public String getRateRules() {
+	public static String getRateRules() {
 		return "between 6.75 and 30.50, inclusive";
 	}
 	
-	public String getHoursRules() {
+	public static String getHoursRules() {
 		return "between 1 and 60, inclusive";
 	}
         
         public static double getTotalPay(){
-                
+                return 
         }
             
         
@@ -68,4 +68,8 @@ public abstract class Employee {
 	}
 
 	public abstract double getPay();	
+
+    boolean sethours(int hours) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

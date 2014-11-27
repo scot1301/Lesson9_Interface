@@ -20,6 +20,7 @@ public class EmployeeGUI extends javax.swing.JFrame {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
+        buttonGroup3 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -50,12 +51,16 @@ public class EmployeeGUI extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(204, 255, 255));
 
         radful.setBackground(new java.awt.Color(204, 255, 255));
+        buttonGroup1.add(radful);
         radful.setForeground(new java.awt.Color(0, 0, 0));
         radful.setText("Full Time");
+        radful.setActionCommand("FT");
 
         radpart.setBackground(new java.awt.Color(204, 255, 255));
+        buttonGroup1.add(radpart);
         radpart.setForeground(new java.awt.Color(0, 0, 0));
         radpart.setText("Part Time");
+        radpart.setActionCommand("PT");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -224,13 +229,14 @@ public class EmployeeGUI extends javax.swing.JFrame {
             type = buttonGroup1.getSelection().getActionCommand();
         }catch(Exception e)
         {
-            JOptionPane.showMessageDialog(this, "Must fill out form correctly");
+            JOptionPane.showMessageDialog(this, e.toString());//"Must fill out form correctly");
             return;
         }
         if (type.equals("FT"))
             temp = new FullTimeEmployee();
         else
             temp = new PartTimeEmployee();
+        
         if (temp.setName(nm) && temp.setHours(hours) && temp.setRate(rate))
         {
             emp[size] = temp;
@@ -245,11 +251,17 @@ public class EmployeeGUI extends javax.swing.JFrame {
         if (temp.setName(nm)==false)error += "Name: " + Employee.getNameRules() + "\n";
         if (temp.sethours(hours)==false)error += "Hours: " + Employee.getNameRules() + "\n";
         if (temp.setRate(rate)==false)error += "Rate: " + Employee.getNameRules() + "\n";
-        JOptionPane.showMessageDialog(this, error);        
+        JOptionPane.showMessageDialog(this, error);    
         
         
     }//GEN-LAST:event_btnaddActionPerformed
 
+    public void clearform(){
+        txtname.setText("");
+        txtrate.setText("");
+        txthours.setText("");
+        buttonGroup1.clearSelection();
+    }
     
     
     public static void main(String args[]) {
@@ -291,6 +303,7 @@ public class EmployeeGUI extends javax.swing.JFrame {
     private javax.swing.JButton btnquit;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
