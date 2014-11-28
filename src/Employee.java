@@ -3,7 +3,7 @@ public abstract class Employee {
 	protected String name;
 	protected double rate;
 	protected int hours;	
-        protected double totalpay = 0;
+        protected static double totalpay = 0;
 	
         double LowRate = 6.75;
         double HighRate = 30.50;
@@ -30,11 +30,8 @@ public abstract class Employee {
 	}
         
         public static double getTotalPay(){
-                return 
+                return totalpay;
         }
-            
-        
-	
 
 	public boolean setName(String nm) {
 		if (nm.equals(""))
@@ -67,7 +64,7 @@ public abstract class Employee {
 		return name;
 	}
 
-	public abstract double getPay();	
+	public abstract double getPay();
 
     boolean sethours(int hours) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

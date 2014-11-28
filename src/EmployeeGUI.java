@@ -55,6 +55,11 @@ public class EmployeeGUI extends javax.swing.JFrame {
         radful.setForeground(new java.awt.Color(0, 0, 0));
         radful.setText("Full Time");
         radful.setActionCommand("FT");
+        radful.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radfulActionPerformed(evt);
+            }
+        });
 
         radpart.setBackground(new java.awt.Color(204, 255, 255));
         buttonGroup1.add(radpart);
@@ -130,6 +135,12 @@ public class EmployeeGUI extends javax.swing.JFrame {
         jLabel5.setText("Total Pay:");
 
         lbltotalpay.setBackground(new java.awt.Color(0, 0, 0));
+        lbltotalpay.setForeground(new java.awt.Color(255, 255, 255));
+        lbltotalpay.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lbltotalpayActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -169,13 +180,16 @@ public class EmployeeGUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtname, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txthours))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(25, 25, 25)
-                        .addComponent(txtrate, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txthours))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(txtrate, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -251,10 +265,18 @@ public class EmployeeGUI extends javax.swing.JFrame {
         if (temp.setName(nm)==false)error += "Name: " + Employee.getNameRules() + "\n";
         if (temp.sethours(hours)==false)error += "Hours: " + Employee.getNameRules() + "\n";
         if (temp.setRate(rate)==false)error += "Rate: " + Employee.getNameRules() + "\n";
-        JOptionPane.showMessageDialog(this, error);    
-        
+        JOptionPane.showMessageDialog(this, error);
         
     }//GEN-LAST:event_btnaddActionPerformed
+
+    
+    private void radfulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radfulActionPerformed
+        
+    }//GEN-LAST:event_radfulActionPerformed
+
+    private void lbltotalpayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lbltotalpayActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lbltotalpayActionPerformed
 
     public void clearform(){
         txtname.setText("");

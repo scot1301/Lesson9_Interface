@@ -5,7 +5,7 @@ public class FullTimeEmployee extends Employee{
         
     }
     public double getPay(){
-        return rate * 40 + (hours-40)*(rate*2);
+        return rate * 60 + (hours-60)*(rate*2);
     }
     
 }
