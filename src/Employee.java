@@ -3,6 +3,7 @@ public abstract class Employee {
 	protected String name;
 	protected double rate;
 	protected int hours;	
+        
         protected static double totalpay = 0;
 	
         double LowRate = 6.75;
@@ -67,6 +68,7 @@ public abstract class Employee {
 	public abstract double getPay();
 
     boolean sethours(int hours) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet."); 
     }
+
 }

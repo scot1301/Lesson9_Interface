@@ -5,6 +5,7 @@ public class PartTimeEmployee extends Employee{
        
     }
     public double getPay(){
+        totalpay += rate * hours;
         return rate * hours;
     }
 }
